@@ -210,6 +210,18 @@
             }
         });
 
+        $(document).on('change', '#ext_job', function() {
+            if ($('#ext_job:checked').val() === "ext_job_yes") {
+                $('#current_employment').show().find('input,textarea').each(function () {
+                    $(this).attr('data-req', "yes");
+                });
+            } else {
+                $('#current_employment').hide().find('input,textarea').each(function () {
+                    $(this).attr('data-req', "no");
+                });
+            }
+        });
+
         $(document).on('change', 'select[name="occupation_status"]', function() {
             switch($(this).val()) {
                 case "employed":
@@ -225,9 +237,16 @@
                     $('#retired').show().find('input,textarea').each(function () {
                         $(this).attr('data-req', "no");
                     });
-                    $('#current_employment').hide().find('input,textarea').each(function () {
-                        $(this).attr('data-req', "no");
-                    });
+
+                    if ($('#ext_job:checked').val() === "ext_job_yes") {
+                        $('#current_employment').show().find('input,textarea').each(function () {
+                            $(this).attr('data-req', "yes");
+                        });
+                    } else {
+                        $('#current_employment').hide().find('input,textarea').each(function () {
+                            $(this).attr('data-req', "no");
+                        });
+                    }
 
                     break;
                 default:
@@ -551,7 +570,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div id="ext_job">
-                                        <label class="control-label" for="ext_job" id="ext_job">Are you also working:</label>
+                                        <label class="control-label" for="ext_job" id="ext_job_label">Are you also working:</label>
                                         <div class="radio">
                                             <label class="control-label radio-inline"><input id="ext_job" name="ext_job" value="ext_job_yes" type="radio" data-req="yes"><strong>Yes</strong></label>
                                         </div>
@@ -594,7 +613,7 @@
                                     <span id="e_y" class="" aria-hidden="true"></span>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-md-offset-6" id="previous_enployment" style="display: none">
+                            <div class="col-md-6" id="previous_enployment" style="display: none">
                                 <div class="title-view"><h3>Previosu emploment</h3></div>
                                 <div class="form-group" id="p_occ"><label class="control-label" for="p_occ" id="p_occ">Job Title: </label>
                                     <input class="form-control" name="p_occ" id="p_occ" type="text" data-req="no">
