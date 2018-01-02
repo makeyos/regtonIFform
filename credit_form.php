@@ -17,7 +17,7 @@
 
 
     <title>Interest Free Credit Metal Detectors at Regton</title>
-    <meta name="description" content="Interest Free Credit on all metal detectors priced over Â£200.00 at Regton Metal Detecting Specialist" />
+    <meta name="description" content="Interest Free Credit on all metal detectors priced over £200.00 at Regton Metal Detecting Specialist" />
     <meta name="robots" content="NOINDEX,NOFOLLOW" />
     <link rel="icon" href="http://regton.com/skin/frontend/default/theme246k/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="http://regton.com/skin/frontend/default/theme246k/favicon.ico" type="image/x-icon" />
