@@ -407,7 +407,7 @@
                     </div>
                 </div>
             </div>
-            <div class="page-title"><h2> Applicant Details</h2><br>
+            <div class="page-title"><h2>Applicant Details</h2><br>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <div class="row">
