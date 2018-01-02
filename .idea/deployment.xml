@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="XAMPP APACHE" uploadOnCheckin="50c40fe9-4926-4475-be15-85934052d0f5">
+  <component name="PublishConfigData" serverName="XAMPP APACHE" persistUploadOnCheckin="false">
     <serverData>
       <paths name="WAMP">
         <serverdata>
@@ -10,6 +10,5 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="WAMP" />
   </component>
 </project>
