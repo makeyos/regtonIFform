@@ -223,20 +223,52 @@
         });
 
         $(document).on('change', 'select[name="occupation_status"]', function() {
+            $('#occupation_fields').find('input, textarea').val('');
             switch($(this).val()) {
                 case "employed":
                     $('#current_employment').show().find('input,textarea').each(function () {
                         $(this).attr('data-req', "yes");
                     });
+                    $('#self_employed').hide().find('input,textarea').each(function () {
+                        $(this).attr('data-req', "no");
+                    });
+                    $('#retired').hide().find('input,textarea').each(function () {
+                        $(this).attr('data-req', "no");
+                    });
+                    $('#previous_enployment').hide().find('input,textarea').each(function () {
+                        $(this).attr('data-req', "no");
+                    });
 
                     break;
                 case "self-employed":
+                    $('#self_employed').show().find('input,textarea').each(function () {
+                        $(this).attr('data-req', "yes");
+                    });
+                    $('#current_employment').hide().find('input,textarea').each(function () {
+                        $(this).attr('data-req', "no");
+                    });
+                    $('#retired').hide().find('input,textarea').each(function () {
+                        $(this).attr('data-req', "no");
+                    });
+                    $('#previous_enployment').hide().find('input,textarea').each(function () {
+                        $(this).attr('data-req', "no");
+                    });
 
                     break;
                 case "retired":
                     $('#retired').show().find('input,textarea').each(function () {
                         $(this).attr('data-req', "no");
                     });
+                    $('#current_employment').hide().find('input,textarea').each(function () {
+                        $(this).attr('data-req', "no");
+                    });
+                    $('#self_employed').hide().find('input,textarea').each(function () {
+                        $(this).attr('data-req', "no");
+                    });
+                    $('#previous_enployment').hide().find('input,textarea').each(function () {
+                        $(this).attr('data-req', "no");
+                    });
+
 
                     if ($('#ext_job:checked').val() === "ext_job_yes") {
                         $('#current_employment').show().find('input,textarea').each(function () {
@@ -549,7 +581,7 @@
             </div>
 
             <div class="page-title"><h2>Applicant Occupation Details</h2><br>
-                <div class="row">
+                <div class="row" id="occupation_fields">
                     <div class="col-md-10 col-md-offset-1">
                         <div class="form-group" id="occupation_status"><label class="control-label" for="occupation_status" id="occupation_status">Applicant Occupation Status:</label>
                             <select class="form-control" name="occupation_status" id="occupation_status" data-req="yes">
@@ -582,6 +614,33 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-md-6" id="self_employed" style="display: none">
+                                <div class="title-view"><h3>Trade information</h3></div>
+                                <div class="form-group" id="se"><label class="control-label" for="se" id="se">Trade Name:</label>
+                                    <input class="form-control" name="se" id="se" type="text" data-req="no">
+                                    <span id="se" class="" aria-hidden="true"></span>
+                                </div>
+                                <div class="form-group" id="t_occ"><label class="control-label" for="t_occ" id="t_occ">Ocupation:</label>
+                                    <input class="form-control" name="t_occ" id="t_occ" type="text" data-req="no">
+                                    <span id="t_occ" class="" aria-hidden="true"></span>
+                                </div>
+                                <div class="form-group" id="t_a"><label class="control-label" for="t_a" id="t_a">Full address of the employer:</label>
+                                    <textarea name="t_a" class="form-control" rows="3" id="t_a" data-req="no"></textarea>
+                                    <span id="t_a" class="" aria-hidden="true"></span>
+                                </div>
+                                <div class="form-group" id="t_p"><label class="control-label" for="t_p" id="t_p">Post Code: </label>
+                                    <input class="form-control" name="t_p" id="t_p" size="10" type="text" data-req="no">
+                                    <span id="t_p" class="" aria-hidden="true"></span>
+                                </div>
+                                <div class="form-group" id="t_tel"><label class="control-label" for="t_tel" id="t_tel">Trade phone number: </label>
+                                    <input class="form-control" name="t_tel" id="t_tel" type="text" data-req="no">
+                                    <span id="t_tel" class="" aria-hidden="true"></span>
+                                </div>
+                                <div class="form-group" id="t_y"><label class="control-label" for="t_y" id="t_y">How long have you been doing this?</label>
+                                    <input class="form-control" name="t_y" id="t_y" size="3" type="number" data-req="no">
+                                    <span id="t_y" class="" aria-hidden="true"></span>
+                                </div>
+                            </div>
                             <div class="col-md-6" id="current_employment" style="display: none">
                                 <div class="title-view"><h3>Current employment</h3></div>
                                 <div class="form-group" id="occ"><label class="control-label" for="occ" id="occ">Job Title:</label>

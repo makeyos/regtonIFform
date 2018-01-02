@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="WAMP">
+  <component name="PublishConfigData" serverName="XAMPP APACHE">
     <serverData>
-      <paths name="WAMP">
+      <paths name="XAMPP APACHE">
         <serverdata>
           <mappings>
-            <mapping deploy="PhpstormProjects/untitled" local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
